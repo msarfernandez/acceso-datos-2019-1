@@ -13,3 +13,4 @@ C:\Users\Max\Documents\Repos\acceso-datos-2019-1\Acceso-Datos\PresentacionWinFor
 C:\Users\Max\Documents\Repos\acceso-datos-2019-1\Acceso-Datos\PresentacionWinForm\obj\Debug\PresentacionWinForm.csproj.CopyComplete
 C:\Users\Max\Documents\Repos\acceso-datos-2019-1\Acceso-Datos\PresentacionWinForm\obj\Debug\PresentacionWinForm.exe
 C:\Users\Max\Documents\Repos\acceso-datos-2019-1\Acceso-Datos\PresentacionWinForm\obj\Debug\PresentacionWinForm.pdb
+C:\Users\Max\Documents\Repos\acceso-datos-2019-1\Acceso-Datos\PresentacionWinForm\obj\Debug\PresentacionWinForm.frmAltaSuperheroe.resources

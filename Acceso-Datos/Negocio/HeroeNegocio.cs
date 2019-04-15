@@ -10,7 +10,6 @@ namespace Negocio
 {
     public class HeroeNegocio
     {
-
         public List<Heroe> listarHeroes()
         {
             SqlConnection conexion = new SqlConnection();
@@ -20,7 +19,7 @@ namespace Negocio
             Heroe nuevo;
             try
             {
-                conexion.ConnectionString = "data source=.; initial catalog=SUPERHEROES_DB; integrated security=sspi";
+                conexion.ConnectionString = "data source=(local); initial catalog=SUPERHEROES_DB; integrated security=sspi";
                 comando.CommandType = System.Data.CommandType.Text;
                 comando.CommandText = "select Nombre, Debilidad From PERSONAJES";
                 comando.Connection = conexion;
@@ -33,7 +32,7 @@ namespace Negocio
                     nuevo.Nombre = lector.GetString(0);
                     nuevo.Debilidad = lector.GetString(1);
                     listado.Add(nuevo);
-                }
+                }                    
 
                 return listado;
 
@@ -47,6 +46,33 @@ namespace Negocio
                 conexion.Close();
             }
         }
+
+        public void agregarHeroe(Heroe nuevo)
+        {
+            SqlConnection conexion = new SqlConnection();
+            SqlCommand comando = new SqlCommand();
+            try
+            {
+                conexion.ConnectionString = "data source=(local); initial catalog=SUPERHEROES_DB; integrated security=sspi";
+                comando.CommandType = System.Data.CommandType.Text;
+                comando.CommandText = "insert into PERSONAJES (Nombre) values ('" + nuevo.Nombre + "')";
+                comando.Connection = conexion;
+                conexion.Open();
+
+                comando.ExecuteNonQuery();
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                conexion.Close();
+            }
+        }
+
+        public void modificarHeroe(Heroe modificar) { }
 
     }
 }

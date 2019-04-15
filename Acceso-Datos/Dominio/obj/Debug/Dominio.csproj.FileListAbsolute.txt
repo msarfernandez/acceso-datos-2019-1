@@ -3,3 +3,4 @@ C:\Users\Max\Documents\Repos\acceso-datos-2019-1\Acceso-Datos\Dominio\bin\Debug\
 C:\Users\Max\Documents\Repos\acceso-datos-2019-1\Acceso-Datos\Dominio\obj\Debug\Dominio.csproj.CoreCompileInputs.cache
 C:\Users\Max\Documents\Repos\acceso-datos-2019-1\Acceso-Datos\Dominio\obj\Debug\Dominio.dll
 C:\Users\Max\Documents\Repos\acceso-datos-2019-1\Acceso-Datos\Dominio\obj\Debug\Dominio.pdb
+C:\Users\Max\Documents\Repos\acceso-datos-2019-1\Acceso-Datos\Dominio\obj\Debug\Dominio.csprojAssemblyReference.cache

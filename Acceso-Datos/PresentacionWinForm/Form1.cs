@@ -24,11 +24,22 @@ namespace PresentacionWinForm
             try
             {
                 dgvPersonajes.DataSource = negocio.listarHeroes();
+                dgvPersonajes.Columns[0].Visible = false;
+                dgvPersonajes.Columns[3].Visible = false;
+                dgvPersonajes.Columns[4].Visible = false;
+                dgvPersonajes.Columns[5].Visible = false;
+
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
             }
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            frmAltaSuperheroe alta = new frmAltaSuperheroe();
+            alta.Show();
         }
     }
 }
