@@ -12,5 +12,6 @@ namespace Dominio
         public string SuperPoder { get; set; }
         public List<string> PoderesSecundario { get; set; }
 
+
     }
 }

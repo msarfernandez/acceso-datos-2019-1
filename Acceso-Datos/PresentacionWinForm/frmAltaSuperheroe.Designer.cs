@@ -121,6 +121,7 @@
             // 
             // cboUniverso
             // 
+            this.cboUniverso.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboUniverso.FormattingEnabled = true;
             this.cboUniverso.Location = new System.Drawing.Point(93, 175);
             this.cboUniverso.Name = "cboUniverso";
@@ -164,6 +165,7 @@
             this.Controls.Add(this.lblDebilidad);
             this.Controls.Add(this.lblNombre);
             this.Name = "frmAltaSuperheroe";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Alta Héroe";
             this.Load += new System.EventHandler(this.frmAltaSuperheroe_Load);
             this.ResumeLayout(false);

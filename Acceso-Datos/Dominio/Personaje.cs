@@ -8,7 +8,7 @@ namespace Dominio
 {
     public class Personaje
     {
-
+        public int Id { get; set; }
         public string Nombre { get; set; }
         public string Debilidad { get; set; }
         public bool UsaCapa { get; set; }
