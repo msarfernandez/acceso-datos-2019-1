@@ -19,7 +19,8 @@ namespace Negocio
             SqlCommand comando = new SqlCommand();
             SqlDataReader lector;
             List<Heroe> listado = new List<Heroe>();
-            Heroe nuevo;
+            Heroe heroe;
+            PoderSecundarioNegocio poderSecundarioNegocio = new PoderSecundarioNegocio();
             try
             {
                 conexion.ConnectionString = AccesoDatosManager.cadenaConexion;
@@ -32,9 +33,9 @@ namespace Negocio
 
                 while (lector.Read())
                 {
-                    nuevo = new Heroe();
-                    nuevo.Id = lector.GetInt32(0);
-                    nuevo.Nombre = lector.GetString(1);
+                    heroe = new Heroe();
+                    heroe.Id = lector.GetInt32(0);
+                    heroe.Nombre = lector["Nombre"].ToString();
 
                     //MSF-20190420: acá manejamos un posible nulo desde la DB. Recuerdan que la otra vez nos falló?
                     //Era porque en la DB estaba nulo y acá lo queríamos tomar y no le gustaba.
@@ -43,19 +44,21 @@ namespace Negocio
                     //que sean nulleables. Solo a esa deberían agregarles ésta validación. Que de hecho pueden meter en un método
                     //para no tener que escribirla completa cada vez, por ejemplo.
                     if(!Convert.IsDBNull(lector["Debilidad"]))
-                        nuevo.Debilidad = lector.GetString(2);
+                        heroe.Debilidad = lector.GetString(2);
 
                     if (!Convert.IsDBNull(lector["UsaCapa"]))
-                        nuevo.UsaCapa = (bool)lector["UsaCapa"];
+                        heroe.UsaCapa = (bool)lector["UsaCapa"];
 
                     if (!Convert.IsDBNull(lector["Volador"]))
-                        nuevo.Volador = (bool)lector["Volador"];
+                        heroe.Volador = (bool)lector["Volador"];
 
-                    nuevo.Universo = new Universo();
-                    nuevo.Universo.Id = (int)lector["IdUniverso"];
-                    nuevo.Universo.Nombre = lector["Descripcion"].ToString();
+                    heroe.Universo = new Universo();
+                    heroe.Universo.Id = (int)lector["IdUniverso"];
+                    heroe.Universo.Nombre = lector["Descripcion"].ToString();
 
-                    listado.Add(nuevo);
+                    heroe.PoderesSecundario = poderSecundarioNegocio.listarPoderes(heroe.Id);
+
+                    listado.Add(heroe);
                 }                    
 
                 return listado;

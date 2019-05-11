@@ -60,7 +60,7 @@ namespace PresentacionWinForm
                 dgvPersonajes.Columns[1].Visible = false;
                 //dgvPersonajes.Columns[4].Visible = false;
                 //dgvPersonajes.Columns[5].Visible = false;
-
+                //dgvPersonajes.Columns[5].Visible = false;
             }
             catch (Exception ex)
             {
@@ -76,9 +76,12 @@ namespace PresentacionWinForm
             }
             else
             {
-                List<Heroe> lista;
-                lista = listaHeroesLocal.FindAll(X => X.Nombre.Contains(txtBusqueda.Text));
-                dgvPersonajes.DataSource = lista;
+                if (txtBusqueda.Text.Length >= 3)
+                {
+                    List<Heroe> lista;
+                    lista = listaHeroesLocal.FindAll(X => X.Nombre.Contains(txtBusqueda.Text) || X.Universo.Nombre.Contains(txtBusqueda.Text));
+                    dgvPersonajes.DataSource = lista;
+                }
             }
         }
     }

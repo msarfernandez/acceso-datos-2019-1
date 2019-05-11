@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="HeroeNegocio.cs" />
+    <Compile Include="PoderSecundarioNegocio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UniversoNegocio.cs" />
   </ItemGroup>

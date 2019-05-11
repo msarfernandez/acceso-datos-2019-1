@@ -10,11 +10,12 @@ namespace Negocio
 {
     public class UniversoNegocio
     {
+
         public List<Universo> listarUniversos()
         {
             List<Universo> listado = new List<Universo>();
             AccesoDatosManager accesoDatos = new AccesoDatosManager();
-            Universo uni = new Universo();
+            Universo uni;
             try
             {
                 accesoDatos.setearConsulta("Select IdUniverso, Descripcion from UNIVERSOS");

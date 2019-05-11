@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Dominio
 {
-    public class Villano
+    public class Villano : Personaje
     {
+
     }
 }

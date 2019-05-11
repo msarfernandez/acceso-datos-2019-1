@@ -86,6 +86,10 @@ namespace PresentacionWinForm
             {
                 cboUniverso.DataSource = universoNegocio.listarUniversos();
 
+                //Opcional para combos
+                //cboUniverso.DisplayMember = "Nombre";
+                //cboUniverso.ValueMember = "Id";
+
                 if (heroeLocal != null)
                 {
                     txtNombre.Text = heroeLocal.Nombre;
@@ -93,6 +97,9 @@ namespace PresentacionWinForm
                     ckbCapa.Checked = heroeLocal.UsaCapa;
                     ckbVuela.Checked = heroeLocal.Volador;
                     cboUniverso.SelectedIndex = cboUniverso.FindString(heroeLocal.Universo.Nombre);
+
+                    //alternativa al retomar una modificacion. Si tenes configurado Display y Value Member
+                    //cboUniverso.SelectedValue = heroeLocal.Universo.Id;
                 }
             }
             catch (Exception ex)
@@ -100,6 +107,11 @@ namespace PresentacionWinForm
                 MessageBox.Show(ex.ToString());
             }
 
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

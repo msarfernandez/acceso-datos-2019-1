@@ -44,17 +44,17 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvPersonajes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPersonajes.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvPersonajes.Location = new System.Drawing.Point(12, 42);
+            this.dgvPersonajes.Location = new System.Drawing.Point(12, 64);
             this.dgvPersonajes.MultiSelect = false;
             this.dgvPersonajes.Name = "dgvPersonajes";
             this.dgvPersonajes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPersonajes.Size = new System.Drawing.Size(472, 198);
+            this.dgvPersonajes.Size = new System.Drawing.Size(472, 203);
             this.dgvPersonajes.TabIndex = 0;
             // 
             // btnAgregar
             // 
             this.btnAgregar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAgregar.Location = new System.Drawing.Point(409, 246);
+            this.btnAgregar.Location = new System.Drawing.Point(409, 273);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(75, 23);
             this.btnAgregar.TabIndex = 1;
@@ -65,7 +65,7 @@
             // btnModificar
             // 
             this.btnModificar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnModificar.Location = new System.Drawing.Point(328, 246);
+            this.btnModificar.Location = new System.Drawing.Point(328, 273);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(75, 23);
             this.btnModificar.TabIndex = 2;
@@ -76,7 +76,7 @@
             // btnEliminar
             // 
             this.btnEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEliminar.Location = new System.Drawing.Point(247, 246);
+            this.btnEliminar.Location = new System.Drawing.Point(247, 273);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 23);
             this.btnEliminar.TabIndex = 3;
@@ -104,7 +104,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(496, 275);
+            this.ClientSize = new System.Drawing.Size(496, 302);
             this.Controls.Add(this.txtBusqueda);
             this.Controls.Add(this.x);
             this.Controls.Add(this.btnEliminar);
