@@ -74,6 +74,32 @@ namespace Negocio
             }
         }
 
+        public void agregarHeroeSP(Heroe heroeNuevo)
+        {
+            AccesoDatosManager accesoDatos = new AccesoDatosManager();
+            try
+            {
+                accesoDatos.setearSP("agregarHeroe");
+                accesoDatos.Comando.Parameters.Clear();
+                accesoDatos.Comando.Parameters.AddWithValue("@Nombre", heroeNuevo.Nombre);
+                accesoDatos.Comando.Parameters.AddWithValue("@Debilidad", heroeNuevo.Debilidad);
+                //accesoDatos.Comando.Parameters.AddWithValue("@UC", modificar.UsaCapa);
+                //accesoDatos.Comando.Parameters.AddWithValue("@Vol", modificar.Volador);
+                //accesoDatos.Comando.Parameters.AddWithValue("@IdUni", modificar.Universo.Id);
+                accesoDatos.abrirConexion();
+                accesoDatos.ejecutarAccion();
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                accesoDatos.cerrarConexion();
+            }
+        }
+
         public void agregarHeroe(Heroe nuevo)
         {
             SqlConnection conexion = new SqlConnection();
@@ -105,7 +131,6 @@ namespace Negocio
             AccesoDatosManager accesoDatos = new AccesoDatosManager();
             try
             {
-
                 accesoDatos.setearConsulta("update PERSONAJES Set Nombre=@Nombre, Debilidad=@Debilidad, UsaCapa=@UC, Volador=@Vol, IdUniverso=@IdUni Where Id=" + modificar.Id.ToString());
                 accesoDatos.Comando.Parameters.Clear();
                 accesoDatos.Comando.Parameters.AddWithValue("@Nombre", modificar.Nombre);
