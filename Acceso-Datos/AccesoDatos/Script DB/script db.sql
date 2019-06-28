@@ -48,3 +48,30 @@ as
 insert into PERSONAJES (Nombre, Debilidad) values (@Nombre, @Debilidad)
 
 GO
+
+USE [SUPERHEROES_DB]
+GO
+
+/****** Object:  Table [dbo].[USUARIOS]    Script Date: 28/6/2019 18:27:49 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[USUARIOS](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Usuario] [varchar](50) NULL,
+	[Clave] [varchar](50) NULL,
+	[Intentos] [int] NULL,
+	[Bloqueado] [bit] NULL,
+ CONSTRAINT [PK_USUARIOS] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+
+
+insert into USUARIOS values ('admin', 'admin', 0, 0)
